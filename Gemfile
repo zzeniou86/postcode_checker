@@ -30,6 +30,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # Use restful http client
 gem 'httparty', '~> 0.13.7'
+# Use service objects
+gem 'simple_command'
+# Use postcode validator and parser
+gem 'uk_postcode', '~> 2.1', '>= 2.1.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
