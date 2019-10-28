@@ -1,5 +1,5 @@
 require 'test_helper'
- 
+
 class PostcodesFlowTest < ActionDispatch::IntegrationTest
   test 'should see the form' do
     get '/'

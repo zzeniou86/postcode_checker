@@ -1,11 +1,15 @@
 require: rubocop-rails
 
+inherit_from: .rubocop_todo.yml
+
 AllCops:
   Exclude:
     - bin/**/*
+    - vendor/**/*
     - node_modules/**/*
     - Gemfile
     - Rakefile
     - db/schema.rb
+
 Rails:
   Enabled: true
