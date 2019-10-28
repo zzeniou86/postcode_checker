@@ -1,0 +1,11 @@
+require: rubocop-rails
+
+AllCops:
+  Exclude:
+    - bin/**/*
+    - node_modules/**/*
+    - Gemfile
+    - Rakefile
+    - db/schema.rb
+Rails:
+  Enabled: true
