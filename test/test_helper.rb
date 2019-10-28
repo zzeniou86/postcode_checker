@@ -1,6 +1,13 @@
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
+require 'vcr'
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'test/vcr_cassettes'
+  c.hook_into :webmock
+  c.default_cassette_options = { preserve_exact_body_bytes: true }
+end
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers

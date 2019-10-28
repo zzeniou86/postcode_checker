@@ -55,6 +55,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  # Use VCR to record and reply http interactions
+  gem 'vcr', '~> 5.0'
+  # Use Webmock for stubbing http calls
+  gem 'webmock', '~> 3.7', '>= 3.7.6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
