@@ -33,7 +33,7 @@ class PostcodesControllerTest < ActionDispatch::IntegrationTest
 
   test "postcodes#check_whitelist - bad request response on non-found postcode (client error)" do
     VCR.use_cassette('postcodes_io/lookup') do
-      post postcodes_check_whitelist_url, params: { query: 'SH24 1AC' }, xhr: true
+      post postcodes_check_whitelist_url, params: { query: 'SW112NF' }, xhr: true
 
       assert_response :bad_request
     end
