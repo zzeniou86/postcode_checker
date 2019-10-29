@@ -7,6 +7,8 @@ VCR.configure do |c|
   c.cassette_library_dir = 'test/vcr_cassettes'
   c.hook_into :webmock
   c.default_cassette_options = { preserve_exact_body_bytes: true }
+  c.allow_http_connections_when_no_cassette = true # allows the startup of headless chrome for e2e tests
+  c.ignore_localhost = true # allows e2e tests communicate to headless chrome
 end
 
 class ActiveSupport::TestCase
