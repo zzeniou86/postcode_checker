@@ -8,7 +8,7 @@ class PostcodesController < ApplicationController
     lsoas_whitelist = helpers.lsoas_whitelist
     postcodes_whitelist = helpers.postcodes_whitelist
 
-    command = PostcodeChecker.call(client, postcode, postcodes_whitelist, lsoas_whitelist)
+    command = WhitelistChecker.call(client, postcode, postcodes_whitelist, lsoas_whitelist)
 
     if command.success?
       @result = command.result

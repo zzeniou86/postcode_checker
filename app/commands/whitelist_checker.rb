@@ -1,5 +1,5 @@
 #:nodoc
-class PostcodeChecker
+class WhitelistChecker
   prepend SimpleCommand
 
   def initialize(client, postcode, postcode_whitelist = [], lsoa_whitelist = [])
