@@ -3,13 +3,11 @@ class PostcodesController < ApplicationController
   def index; end
 
   def check_whitelist
-    client = PostcodesIo::Client.new
-    postcode = params['query']
-    lsoas_whitelist = helpers.lsoas_whitelist
-    postcodes_whitelist = helpers.postcodes_whitelist
-
-    command = WhitelistChecker.call(client, postcode, postcodes_whitelist, lsoas_whitelist)
-
+    command = WhitelistChecker.call(PostcodesIo::Client.new,
+                                    params['query'],
+                                    helpers.postcodes_whitelist,
+                                    helpers.lsoas_whitelist)
+                                    
     if command.success?
       @result = command.result
     else
