@@ -20,7 +20,7 @@ class PostcodeChecker
   def validate_postcode_format
     return true if @postcode.full_valid?
 
-    errors.add(:postcode_format, 'is invalid')
+    errors.add(:whitelist_checker, 'The postcode format is invalid. Please check if it\'s correct and try again')
     nil
   end
 
@@ -33,7 +33,7 @@ class PostcodeChecker
     response = @client.lookup(pc)
     return @lsoa_whitelist.any? { |lsoa| response['result']['lsoa'].include?(lsoa) } unless response.key?('error')
 
-    errors.add(:postcode_client, response['error'])
+    errors.add(:whitelist_checker, response['error'])
     nil
   end
 end

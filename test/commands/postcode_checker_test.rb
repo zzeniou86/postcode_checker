@@ -14,14 +14,14 @@ class PostcodesChecker < ActiveSupport::TestCase
     command = PostcodeChecker.call(@client, 'INVALIDPOSTCODE', [], [])
 
     assert command.failure?
-    assert command.errors.key?(:postcode_format)
+    assert command.errors.key?(:whitelist_checker)
   end
 
   test 'returns error on failure for a not found postcode' do
     command = PostcodeChecker.call(@client, 'SH24 1AA', [], [])
 
     assert command.failure?
-    assert command.errors.key?(:postcode_client)
+    assert command.errors.key?(:whitelist_checker)
   end
 
   test 'returns false for a non-whitelisted postcode' do

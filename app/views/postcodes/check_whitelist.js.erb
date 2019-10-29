@@ -1,0 +1,9 @@
+console.log('hello')
+
+<% if @errors %>
+  html = '<div class="error" style="color:red;"> <%=@errors[:whitelist_checker][0]%> </div>'
+<% else %>
+  html = '<div class="success"> The postcode is <%=@result ? 'whitelisted' : 'not whitelisted'%> </div>'
+<% end %>
+
+document.getElementById("result").innerHTML = html

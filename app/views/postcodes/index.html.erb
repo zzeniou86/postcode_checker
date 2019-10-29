@@ -1,7 +1,9 @@
 <h1>Postcode Checker</h1>
 
-<%= form_with(url: "/postcodes", method: "post") do %>
+<%= form_with(url: "/postcodes/check_whitelist", method: "post") do %>
   <%= label_tag(:q, "Enter a postcode:") %>
   <%= text_field_tag(:query) %>
   <%= submit_tag("Submit") %>
 <% end %>
+
+<div id="result"></div>
